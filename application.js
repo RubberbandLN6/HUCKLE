@@ -1,7 +1,9 @@
-$(document).ready(function()
+$(document).ready(function() {
 
-$('#number').onclick(function() {
-	var number = Math.floor(Math.random()*100);
+var number = Math.floor((Math.random()*100)+1);
+var myNumber = $("#myNumber").val(); 
+
+$('#Submit').click(function() {
 
 	if (myNumber == number)
 	{
@@ -19,4 +21,6 @@ $('#number').onclick(function() {
 	{
 		alert ("Input a number please!");
 	}
-}
+
+	});
+});
