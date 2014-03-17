@@ -7,11 +7,32 @@
 		<script src="jquery.1.11.0.js"></script>
 		<link rel="stylesheet" type="text/css" href="main.css">
 		<script type="text/javascript" src='application.js'></script>
+		<style type="text/css">
+		@font-face {
+ 		font-family: "Twilight";
+ 		src: url("TWYLZW__.eot") /* EOT file for IE */
+		}
+		@font-face {
+ 		font-family: "Twilight";
+ 		src: url("TWYLZW__.TTF") /* TTF file for CSS3 browsers */
+		}
+		</style>
 	</head>
 <body>
-	<h1> Can You Guess the Number??</h1>
+	<nav>
+			<li><a id="left" href="#">Steven Lutsky</a></li>
+			<li><a id="right" href="#">Cheat</a></li>
+	</nav>
+<div id="response"></div>
+	<div id = "mainpanel">
+	<h1> Can You Guess the Number?</h1>
+	<form>
 		<input type= "text" name ="myNumber" id = "myNumber" />
-		<input type = "Submit" name = "Submit" id ="Submit" />
+		<br></br>
+		<br></br>
+		<input type = "Submit" name = "Submit" class ="button" />
+		<input type = "button" name = "new game" class ="button" value = "New Game" />
 	</form>
+	</div>
 </body>
 </html>

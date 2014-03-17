@@ -1,26 +1,36 @@
 $(document).ready(function() {
 
 var number = Math.floor((Math.random()*100)+1);
-var myNumber = $("#myNumber").val(); 
+	console.log(number);
 
-$('#Submit').click(function() {
+$('#Submit').click(function(e) {
+e.preventDefault();
+var myNumber = $("#myNumber").val(); 
+var response = "";
 
 	if (myNumber == number)
 	{
-		alert ("You got the number!");
+		response = "You got the number!";
 	}
 	else if (myNumber > number)
 	{
-		alert ("You went too far!");
+		response = "You went too far!";
 	}
 	else if (myNumber < number)
 	{
-		alert ("Keep going!");
+		response = "Keep going!";
 	}
 	else 
 	{
-		alert ("Input a number please!");
+		response = "Input a number please!";
 	}
+$("#response").html(response);
 
 	});
+$('#newGame').click(function() {
+number = Math.floor((Math.random()*100)+1);
+	console.log(number);
+$("#myNumber").val("");
+$('#response').html(""); 
+});
 });
