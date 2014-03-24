@@ -21,17 +21,22 @@
 <body>
 	<nav>
 			<li><a id="left" href="#">Steven Lutsky</a></li>
-			<li><a id="right" href="#">Cheat</a></li>
+			<li><a id="right" href="#">Enter the Twilight Zone</a></li>
+
 	</nav>
 <div id="response"></div>
 	<div id = "mainpanel">
 	<h1> Can You Guess the Number?</h1>
+	<h2 id="rules">Guess a number between 1 - 100</h2>
 	<form>
-		<input type= "text" name ="myNumber" id = "myNumber" />
+		<input type= "text" name ="myNumber" id = "myNumber"/autofocus />
 		<br></br>
 		<br></br>
-		<input type = "Submit" name = "Submit" class ="button" />
-		<input type = "button" name = "new game" class ="button" value = "New Game" />
+		<input type = "Submit" id = "Submit" name = "Submit" class ="button" />
+		<input type = "button" name = "new game" class ="button" id = "newgame" value = "New Game" />
+	<div id="previous"></div>
+		<h2 class="button">You Guessed:</h2>
+			<span id="guesses"></span>
 	</form>
 	</div>
 </body>

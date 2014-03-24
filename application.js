@@ -1,36 +1,66 @@
 $(document).ready(function() {
-
+//Sets random number for game//
 var number = Math.floor((Math.random()*100)+1);
 	console.log(number);
 
 $('#Submit').click(function(e) {
 e.preventDefault();
-var myNumber = $("#myNumber").val(); 
+var myNumber = $("#myNumber").val();
+diff = Math.abs(myNumber - number);
+var prevGuesses = []; 
 var response = "";
 
 	if (myNumber == number)
 	{
 		response = "You got the number!";
+		document.getElementById("response").style.color="green";
+		
 	}
-	else if (myNumber > number)
+	else if (diff > 5 && diff < 15)
 	{
-		response = "You went too far!";
+		response = "Getting warmer!";
+		document.getElementById("response").style.color="orange";
 	}
-	else if (myNumber < number)
+	else if (diff <= 5 && diff > 0)
 	{
-		response = "Keep going!";
+		response = "Very hot!";
+		document.getElementById("response").style.color="red";
+	}
+	else if (diff > 15)
+	{
+		response = "Cold!"
+		document.getElementById("response").style.color="blue";
 	}
 	else 
 	{
 		response = "Input a number please!";
+		document.getElementById("response").style.color="black";
 	}
-$("#response").html(response);
+    
+$("#response").hide().html(response).fadeIn ('slow');
+$("#myNumber").val("");
+/*//enter key submits
+   $("#myNumber").keypress(function (e) {
+        var key = e.which;
+        if(key == 13) {
+            $("#submit").click();
+            return false;  
+        }
+});
+*/
+//collects past guesses
+prevGuesses.push(" " + myNumber + " ");
+$('#guesses').html(prevGuesses.toString());
 
-	});
-$('#newGame').click(function() {
+});
+
+//Starts a new game
+$('#newgame').click(function() {
 number = Math.floor((Math.random()*100)+1);
 	console.log(number);
 $("#myNumber").val("");
-$('#response').html(""); 
+$('#response').html("");
 });
+
+
 });
