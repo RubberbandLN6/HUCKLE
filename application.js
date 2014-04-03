@@ -4,6 +4,7 @@ var number = Math.floor((Math.random()*100)+1);
 	console.log(number);
 $("#right").click(function() {
     document.getElementById('twilight').play();
+});
 $('#Submit').click(function(e) {
 e.preventDefault();
 var myNumber = $("#myNumber").val();
